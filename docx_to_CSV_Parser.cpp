@@ -7,7 +7,10 @@
 
 int main(int argc, char* argv[])
 {
+    //パスを変数に代入
     char* inputFilePath = argv[1];
+
+    //もしパスが指定されていない・１つ以上指定している場合は標準入力に対象パスを入力させる
     if (argc != 2)
     {
         while(inputFilePath == nullptr)
@@ -17,6 +20,7 @@ int main(int argc, char* argv[])
         }
     }
     
+    //XMLファイルを読み込む
     pugi::xml_document doc_tgt;
     pugi::xml_parse_result result_tgt = doc_tgt.load_file(inputFilePath);
 
